@@ -1,5 +1,5 @@
 <template>
-  <!-- Question index -->
+  <!-- Request index -->
   <div class="flex items-center justify-between">
     <h3 class="text-lg font-bold">
       {{ index + 1 }}. {{ model.question }}
@@ -7,10 +7,10 @@
 
 
     <div class="flex items-center">
-      <!-- Add new question -->
+      <!-- Add new request-->
       <button
         type="button"
-        @click="addQuestion()"
+        @click="addRequest()"
         class="
           flex
           items-center
@@ -38,12 +38,12 @@
         </svg>
         Add
       </button>
-      <!--/ Add new question -->
+      <!--/ Add new request-->
 
-      <!-- Delete question -->
+      <!-- Delete request-->
       <button
         type="button"
-        @click="deleteQuestion()"
+        @click="deleteRequest()"
         class="
           flex
           items-center
@@ -70,12 +70,12 @@
         </svg>
         Delete
       </button>
-      <!--/ Delete question -->
+      <!--/ Delete request-->
     </div>
   </div>
-  <!--/ Question index -->
+  <!--/ Request index -->
   <div class="grid gap-3 grid-cols-12">
-    <!-- Question -->
+    <!-- Request-->
     <div class="mt-3 col-span-9">
       <label
         :for="'question_text_' + model.data"
@@ -100,16 +100,16 @@
         "
       />
     </div>
-    <!--/ Question -->
+    <!--/ Request-->
 
-    <!-- Question Type -->
+    <!-- Request Type -->
     <div class="mt-3 col-span-3">
-      <label for="question_type" class="block text-sm font-medium text-gray-700"
+      <label for="request_supplier" class="block text-sm font-medium text-gray-700"
         >Supplier</label
       >
       <select
-        id="question_type"
-        name="question_type"
+        id="request_supplier"
+        name="request_supplier"
         v-model="model.type"
         @change="typeChange"
         class="
@@ -131,21 +131,21 @@
         </option>
       </select>
     </div>
-    <!--/ Question Type -->
+    <!--/ Request Type -->
   </div>
 
-  <!-- Question Description -->
+  <!-- Request Description -->
   <div class="mt-3 col-span-9">
     <label
-      :for="'question_description_' + model.id"
+      :for="'request_quantity' + model.id"
       class="block text-sm font-medium text-gray-700"
       >Quantity</label
     >
     <textarea
-      :name="'question_description_' + model.id"
+      :name="'request_quantity' + model.id"
       v-model="model.description"
       @change="dataChange"
-      :id="'question_description_' + model.id"
+      :id="'request_quantity' + model.id"
       class="
         mt-1
         focus:ring-indigo-500 focus:border-indigo-500
@@ -158,7 +158,7 @@
       "
     />
   </div>
-  <!--/ Question Description -->
+  <!--/ Request Description -->
 
   <!-- Data -->
   <div>
@@ -276,7 +276,7 @@ const props = defineProps({
   index: Number,
 });
 
-const emit = defineEmits(["change", "addQuestion", "deleteQuestion"]);
+const emit = defineEmits(["change", "addRequest", "deleteRequest"]);
 
 // Re-create the whole question data to avoid unintentional reference change
 const model = ref(JSON.parse(JSON.stringify(props.question)));
@@ -333,11 +333,11 @@ function dataChange() {
   emit("change", data);
 }
 
-function addQuestion() {
+function addRequest() {
   emit("addQuestion", props.index + 1);
 }
 
-function deleteQuestion() {
+function deleteRequest() {
   emit("deleteQuestion", props.question);
 }
 </script>
