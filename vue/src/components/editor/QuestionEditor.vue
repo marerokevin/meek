@@ -80,7 +80,7 @@
       <label
         :for="'question_text_' + model.data"
         class="block text-sm font-medium text-gray-700"
-        >Question Text</label
+        >Item name</label
       >
       <input
         type="text"
@@ -105,7 +105,7 @@
     <!-- Question Type -->
     <div class="mt-3 col-span-3">
       <label for="question_type" class="block text-sm font-medium text-gray-700"
-        >Select Question Type</label
+        >Supplier</label
       >
       <select
         id="question_type"
@@ -139,7 +139,7 @@
     <label
       :for="'question_description_' + model.id"
       class="block text-sm font-medium text-gray-700"
-      >Description</label
+      >Quantity</label
     >
     <textarea
       :name="'question_description_' + model.id"

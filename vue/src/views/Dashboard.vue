@@ -6,15 +6,23 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-gray-700"
     >
       <DashboardCard class="order-1 lg:order-2" style="animation-delay: 0.1s">
-        <template v-slot:title>Total Surveys</template>
+        <template v-slot:title>Pending Requests</template>
         <div
           class="text-8xl pb-4 font-semibold flex-1 flex items-center justify-center"
         >
           {{ data.totalSurveys }}
         </div>
       </DashboardCard>
-      <DashboardCard class="order-2 lg:order-4" style="animation-delay: 0.2s">
-        <template v-slot:title>Total Answers</template>
+      <DashboardCard class="order-2 lg:order-2" style="animation-delay: 0.1s">
+        <template v-slot:title>Total Requests</template>
+        <div
+          class="text-8xl pb-4 font-semibold flex-1 flex items-center justify-center"
+        >
+          {{ data.totalSurveys }}
+        </div>
+      </DashboardCard>
+      <DashboardCard class="order-3 lg:order-4" style="animation-delay: 0.2s">
+        <template v-slot:title>Completed Requests</template>
         <div
           class="text-8xl pb-4 font-semibold flex-1 flex items-center justify-center"
         >
@@ -25,7 +33,7 @@
         class="order-3 lg:order-1 row-span-2"
         style="animation-delay: 0.2s"
       >
-        <template v-slot:title>Latest Survey</template>
+        <template v-slot:title>Latest Requests</template>
         <div v-if="data.latestSurvey">
           <img
             :src="data.latestSurvey.image_url"
@@ -69,13 +77,13 @@
           </div>
         </div>
         <div v-else class="text-gray-600 text-center py-16">
-          Your don't have surveys yet
+            lagay ka comment dito kevin
         </div>
       </DashboardCard>
       <DashboardCard class="order-4 lg:order-3 row-span-2" style="animation-delay: 0.3s">
         <template v-slot:title>
           <div class="flex justify-between items-center mb-3 px-2">
-            <h3 class="text-2xl font-semibold">Latest Answers</h3>
+            <h3 class="text-2xl font-semibold">Pending Requests</h3>
 
             <a
               href="javascript:void(0)"
@@ -101,7 +109,7 @@
           </a>
         </div>
         <div v-else class="text-gray-600 text-center py-16">
-          Your don't have answers yet
+          You don't have any request yet
         </div>
       </DashboardCard>
     </div>

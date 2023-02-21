@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
-import Surveys from "../views/Surveys.vue";
+import Request from "../views/Request.vue";
 import SurveyView from "../views/SurveyView.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
@@ -18,7 +18,7 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       { path: "/dashboard", name: "Dashboard", component: Dashboard },
-      { path: "/surveys", name: "Surveys", component: Surveys },
+      { path: "/request", name: "Request", component: Request},
       { path: "/surveys/create", name: "SurveyCreate", component: SurveyView },
       { path: "/surveys/:id", name: "SurveyView", component: SurveyView },
     ],
